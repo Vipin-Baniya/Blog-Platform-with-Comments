@@ -1,0 +1,32 @@
+{
+  "name": "blog-platform-with-comments",
+  "version": "1.0.0",
+  "description": "A full-stack blogging platform with comments",
+  "main": "backend/server.js",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "npm run dev-backend & npm run dev-frontend",
+    "dev-backend": "cd backend && npm start",
+    "dev-frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "comments",
+    "full-stack",
+    "react",
+    "express"
+  ],
+  "author": "Vipin Baniya",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vipin-Baniya/Blog-Platform-with-Comments.git"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
