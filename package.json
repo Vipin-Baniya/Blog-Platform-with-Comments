@@ -26,7 +26,7 @@
     "url": "https://github.com/Vipin-Baniya/Blog-Platform-with-Comments.git"
   },
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=20.19.0 || >=22.12.0",
     "npm": ">=6.0.0"
   }
 }
