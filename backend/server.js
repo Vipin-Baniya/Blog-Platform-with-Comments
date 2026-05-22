@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const db = require('./db');
+const { generalLimiter, authLimiter, createLimiter } = require('./middleware/rateLimiter');
 
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
@@ -17,8 +18,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use('/api/auth', authRoutes);
+// Apply general rate limiter to all routes
+app.use(generalLimiter);
+
+// Routes with specific rate limiters
+app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commentRoutes);
